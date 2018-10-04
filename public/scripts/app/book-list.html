@@ -1,14 +1,16 @@
+<!-- Pagination controls are displayed at top of page -->
 <div class="row" ng-if="$ctrl.showPages">
-  <button type="button" class="btn btn-primary btn-lg" ng-click="$ctrl.prevPage()"
+  <button type="button" class="btn btn-primary btn-lg" ng-click="$ctrl.goPage($ctrl.page - 1)"
     ng-disabled="$ctrl.page == 1">
     &lt;
   </button>
   Page {{$ctrl.page}} of {{$ctrl.numPages}} {{$ctrl.result.error}}
-  <button type="button" class="btn btn-primary btn-lg" ng-click="$ctrl.nextPage()"
+  <button type="button" class="btn btn-primary btn-lg" ng-click="$ctrl.goPage($ctrl.page + 1)"
     ng-disabled="$ctrl.page == $ctrl.numPages">
     &gt;
   </button>
 </div>
+<!-- "Searching" placeholder text and request errors are displayed above results (if any) -->
 <div class="row row-loading" ng-if="$ctrl.showLoading">
   <div class="col-sm-6">
     Searching...
@@ -17,6 +19,7 @@
 <div class="row" ng-if="$ctrl.result.error">
   {{$ctrl.result.error}}
 </div>
+<!-- Table headers -->
 <div class="row book-table" ng-if="!$ctrl.showLoading && !$ctrl.result.error">
   <div class="col-sm-1">
     Cover
@@ -28,6 +31,7 @@
     Author
   </div>
 </div>
+<!-- Display result row for each book -->
 <div ng-repeat="book in $ctrl.result.books" class="row book-row">
   <div class="col-sm-1">
     <img src="{{book.imageUrl}}" style="height: 75px;"/>
