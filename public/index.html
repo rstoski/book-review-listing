@@ -1,0 +1,30 @@
+<html ng-app="bookreview">
+  <head>
+    <title>Book Review</title>
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
+    <script src="scripts/core.js"></script>
+    <script src="scripts/app/main-nav.js"></script>
+    <script src="scripts/app/book-list.js"></script>
+  </head>
+  <body ng-controller="mainController">
+    <main-nav></main-nav>
+
+    <div style="padding: 20px; margin-top: 70px;">
+      <ng-view></ng-view>
+    </div>
+  </body>
+</html>
